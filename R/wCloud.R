@@ -22,6 +22,7 @@ amlo <- "~/Documents/personal/data/20200331_AMLO.txt"
 # diputados <- "diputados.txt"
 
 texto <- tolower(readLines(amlo, encoding="UTF-8"))
+texto <- tolower(readLines(amlo, encoding="latin1"))
 
 
 filtro <- c("el","los","la","las","lo","un","unos","una","unas","del","de", "al","a","yo","mi","mí","en","me",
