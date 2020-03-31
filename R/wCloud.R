@@ -1,11 +1,14 @@
-# install.packages("wordcloud2")
-# install.packages("webshot")
-# install.packages("htmlwidgets")
-# install.packages("devtools")
-# install.packages("viridis")
-install.packages("dplyr")
+# R 3.4.4
 
-# devtools::install_github("lchiffon/wordcloud2")
+# Instalar los paquetes que se van a necesitar
+
+#install.packages("wordcloud2")
+#install.packages("webshot")
+#install.packages("htmlwidgets")
+#install.packages("devtools")
+#install.packages("viridis")
+#install.packages("dplyr")
+#devtools::install_github("lchiffon/wordcloud2")
 
 webshot::install_phantomjs()
 library(wordcloud2)
@@ -13,14 +16,12 @@ library(htmlwidgets)
 library(devtools)
 library(viridis)
 library(dplyr)
-# amlo <- "AMLO_MU_BCN_20200328.tx"
 
-amlo <- "20200330_AMLO.txt"
+amlo <- "~/Documents/personal/data/20200331_AMLO.txt"
 
 # diputados <- "diputados.txt"
 
 texto <- tolower(readLines(amlo, encoding="UTF-8"))
-
 
 
 filtro <- c("el","los","la","las","lo","un","unos","una","unas","del","de", "al","a","yo","mi","mí","en","me",
@@ -38,28 +39,26 @@ filtro <- c("el","los","la","las","lo","un","unos","una","unas","del","de", "al"
 #     "estoy", "cuales","sabe", "gonzález","señora", "gerardo", "-", "agradecemos","alejandro","alonso","alfredo","ana","adriana",  "allá", "almazán",
 #     "armando", "aún", "bautista", "carmen", "bienvenidos", "arturo", "beatriz")
 
+texto <- gsub("[[:punct:][:digit:]]" , "", texto) # Eliminar puntuaciones y numeros.
 
 
+textoSplit <- unlist(strsplit(texto, " ")) # Separar palabra por palabra
+textoFreq <- table(textoSplit) # generar una tabla, hace el conteo
 
+textoFreqDF <- as.data.frame(textoFreq) # trasnformar tabla en DF
 
-texto <- gsub("[[:punct:][:digit:]]" , "", texto)
+fewWordsDF <- subset(textoFreqDF, Freq < 20) # elimina todas las palabras menos de 20 repeticiones, revisar, quitar.
 
-
-textoSplit <- unlist(strsplit(texto, " "))
-textoFreq <- table(textoSplit)
-
-textoFreqDF <- as.data.frame(textoFreq)
-
-fewWordsDF <- subset(textoFreqDF, Freq < 20)
 row.names(fewWordsDF) <- fewWordsDF$textoSplit
+
 
 fewWordsDF<- fewWordsDF[!(row.names(fewWordsDF) %in% filtro), ]
 
 
-mutate(fewWordsDF, color = cut(Freq, breaks = c(0, 5, 10, 15, 20, Inf),
-             labels = c("#FDE725FF", "#73D055FF", "#1F968BFF",
-                        "#ba0808", "#481567FF"),
-             include.lowest = TRUE)) -> fewWordsDF
+#mutate(fewWordsDF, color = cut(Freq, breaks = c(0, 5, 10, 15, 20, Inf),
+ #            labels = c("#FDE725FF", "#73D055FF", "#1F968BFF",
+  #                      "#ba0808", "#481567FF"),
+   #          include.lowest = TRUE)) -> fewWordsDF
 
 
 
