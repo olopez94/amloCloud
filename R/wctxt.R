@@ -28,7 +28,7 @@ wctxt <- function(txt, size = 1, maskPath= NULL, filtro = NULL, backColor = "bla
 
 
 
-     wordcloud2(data=textoProcesado, size=size, figPath=maskPath, backgroundColor = backColor, color = color)
+     wordcloud2(data=textoProcesado, size=size, figPath=maskPath, backgroundColor = backColor, color = wordColor)
 
 
 }
