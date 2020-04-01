@@ -13,7 +13,7 @@ library(wordcloud2)
 # backColor = color del fondo
 # subSet    = ... no recuerdo.
 
-wctxt <- function(txt, size = 1, maskPath= NULL, filtro = NULL, backColor = "white", subSet = NULL){
+wctxt <- function(txt, size = 1, maskPath= NULL, filtro = NULL, backColor = "black", subSet = NULL, wordColor = "white"){
 
         # leer el txt y darle el UTF-8 y todo en minusculas.
      texto <- tolower(readLines(txt, encoding="UTF-8"))
@@ -28,7 +28,7 @@ wctxt <- function(txt, size = 1, maskPath= NULL, filtro = NULL, backColor = "whi
 
 
 
-     wordcloud2(data=textoProcesado, size=size, figPath=maskPath, backgroundColor = backColor)
+     wordcloud2(data=textoProcesado, size=size, figPath=maskPath, backgroundColor = backColor, color = color)
 
 
 }
