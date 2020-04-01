@@ -1,0 +1,12 @@
+filtro <- c("el","los","la","las","lo","un","unos","una","unas","del","de", "al","a","yo","mi","mí","en","me",
+    "conmigo","nosotros","nosotras","nos","tu","tú","usted","ti","contigo","ustedes","él","ella","ello","sí","se","consigo","lo",
+    "que", "ahí", "ha", "aquí", "les","está", "este","esto", "hay", "le", "como", "su","pero","esta", "o", "al",
+    "ricardo", "así", "haya", "presidente", "andres", "andrés", "manuel","lópez", "obrador","‘cono","‘la", "‘ni", "‘se", "‘y", "‘ya", "‘yo", "‘el", "sa",
+    "cv", "tal","ram","interlocutora","pregunta", "alberto","interlocutor","bautista",
+    "cristián", "cómo", "días", "ese" ,"desde", "", "y", "e", "ah", "aun", "b", "g", "por", "porque",
+    "es","con","para","no","más", "menos","muy", "mucho","poco", "ya", "han", "uno","dos","tres","dijo", "sé", "ir",
+    "aún", "luis", "da", "c" ,"ve","te", "soy", "pido","idea","hará", "hans", "esos", "don", "doy", "dan","efecto", "entonces",
+    "si", "todo", "hoy","he", "fue","cuál", "hace", "otra","maría", "ocho", "mil", "eso", "va", "son", "qué", "sus", "van",
+    "solo","sólo", "esa", "día", "ser","sin", "ni", "mes", "tan", "ramírez", "era", "esas", "tus", "ras", "omar", "cosa", "gracias","etcétera",
+    "hizo", "gusto", "ver", "todos", "uso", "pueda", "estoy", "sea", "estas", "mis", "cuáles", "cada", "cara", "pues", "hecho", "cosas", "allá", "sino","estén", "dar",
+    "cinco", "algo", "quién", "demás", "wwwgobmxcoronavirus", "ver’", "suya", "elena", "eder", "contó", "estos")
