@@ -1,5 +1,5 @@
 
-
+# R 3.6
 # Funcion que genera una nube de palabras
 #install.packages("wordcloud2")
 library(wordcloud2)
